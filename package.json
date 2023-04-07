@@ -1,0 +1,41 @@
+{
+	"name": "refresh-token",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"deploy": "npm run build && node ./gh-pages.js"
+	},
+	"devDependencies": {
+		"@mdi/font": "^7.2.96",
+		"@sveltejs/adapter-auto": "^2.0.0",
+		"@sveltejs/adapter-static": "^1.0.0-next.50",
+		"@sveltejs/kit": "^1.5.0",
+		"@typescript-eslint/eslint-plugin": "^5.57.0",
+		"@typescript-eslint/parser": "^5.57.0",
+		"axios": "^1.3.4",
+		"bulma": "^0.9.4",
+		"gh-pages": "^5.0.0",
+		"prettier": "^2.8.7",
+		"prettier-plugin-jsdoc": "^0.4.2",
+		"prettier-plugin-svelte": "^2.10.0",
+		"prism-svelte-renderer": "^0.0.2",
+		"prism-themes": "^1.9.0",
+		"prismjs": "^1.29.0",
+		"sass": "^1.60.0",
+		"svelte": "^3.54.0",
+		"svelte-check": "^3.0.1",
+		"svelte-preprocess": "^5.0.3",
+		"tslib": "^2.4.1",
+		"typescript": "^5.0.0",
+		"vite": "^4.2.0"
+	},
+	"type": "module",
+	"dependencies": {
+		"reflect-metadata": "^0.1.13"
+	}
+}
