@@ -37,15 +37,13 @@ Make sure you include the "Keep this here" portions (it is for legal, and securi
 <!--                                                Actual Template Starts Below                                                           -->
 
 
-# Insert Repo Name Here
- Welcome to our WXSD DEMO Repo! <!-- Keep this here --> 
- 
- 1 short main sentence - can use Webex Labs card sentence. Example: "Establish conversations between Apple Messages for Business users and Webex App users.
-
-Insert a paragraph (3-4 sentences). 1 Sentence on **WHAT** the project is about. Insert 1 Sentence on  **WHY** it exists and 1 Sentence on **WHO** it is for.  
+# Refresh Token Client
+Welcome to our WXSD DEMO Repo! <!-- Keep this here --> 
+In here you will find the source code to PoC which displays the process of generating an integrations access token for Cisco Webex and having it continually refreshed for a given interval.
+In this PoC we demonstrate an easy way to request for a fresh access_token from the current token object. This PoC is just a tool for developers to understand our Oauth 2.0 flow easier.
 
  <!--- Insert a screenshot, gif or image below that shows a little about your Demo/PoC -->
- ![image/gif](https://ezgif.com)
+ ![refresh-token](./static/demo.jpg)
 
 
 
@@ -69,16 +67,12 @@ Insert a paragraph (3-4 sentences). 1 Sentence on **WHAT** the project is about.
 
 
 ## Overview
-
-Go into detail about the implementation.   3-4 Sentences
-**HOW** the implementation works. You need not give end-to-end details but an overview.
-
+This PoC follows a simple Webex Oauth2.0 flow for authenticating the user initially. it then stores the token data inside browser local storage and displays the details in a table formatted UI. It then leaves the user with two options to either request for a fresh token object at a given interval or/and request to create a meeting 
 
 
 ### Flow Diagram
-
 <!-- *MANDATORY* Insert Your Flow Diagram Here -->
-![image/gif](insert img link here)
+![flow-design](./static/design.jpg)
 
 
 
@@ -86,23 +80,28 @@ Go into detail about the implementation.   3-4 Sentences
 
 ### Prerequisites & Dependencies: The following instructions assume that you have:
 
-- Is this dependant on having another repo
-- Insert pre-requisites in bullets
-- Insert pre-requisite here  Also state any assumptions that you may have made about the user.
-- Limit nested bullets
+- [Node v18.0.0](https://nodejs.org/en/blog/announcements/v18-release-announce)
+- [Node Version Manager](https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/)
+- [Svelte Basic Understandings](https://svelte.dev/)
 
 
 <!-- GETTING STARTED -->
 
 ### Installation Steps:
-1.  Include step one here
+1. Create an `.env` file at the root level
+2. Copy all variables declared inside `.env.example` file into `.env` file
+3. Select the proper node version
     ```sh
-    insert line of code here if applicable
+    nvm use
     ```
-2.  Insert step two here
-    Insert screenshot, if applicable
-    
-    
+4.  Install node modules
+    ```sh
+     npm i
+     ```
+5.  Start the server
+    ```sh
+    npm run dev
+    ```
     
 ## Demo
 
@@ -114,7 +113,7 @@ Check out our live demo, available [here](<insert link>)!
 
 
 <!-- Update your vidcast title, video screenshot, vidcast/youtube link & name -->
-[![Your Video Title ](assets/peer_support_main.PNG)](https://www.youtube.com/watch?v=SqZhiC8jHhU&t=10s, "<insert demo name here>")
+[![Your Video Title ](./static/play.png)](https://app.vidcast.io/share/0aaf125f-b02d-4ad3-9a41-6e636d4d7323 "refresh token demo")
 
 
 

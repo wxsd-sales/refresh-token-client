@@ -27,20 +27,20 @@
   let displayError = false;
   let error = {};
 
-  $: response = `
-  hostEmail:             ${meetingResponse.hostEmail}
-  hostKey:               ${meetingResponse.hostKey}
-  start:                 ${meetingResponse.start}
-  end:                   ${meetingResponse.end}
-  timezone:              ${meetingResponse.timezone}
-  title:                 ${meetingResponse.title}
-  sipAddress:            ${meetingResponse.sipAddress}
-  siteUrl:               ${meetingResponse.siteUrl}
-  webLink:               ${meetingResponse.webLink}
-  meetingNumber:         ${meetingResponse.meetingNumber}
-  password:              ${meetingResponse.password}
-  enabledJoinBeforeHost: ${meetingResponse.enabledJoinBeforeHost}
-  joinBeforeHostMinutes: ${meetingResponse.joinBeforeHostMinutes}`;
+  $: response = `  
+    hostEmail:             ${meetingResponse.hostEmail}
+    hostKey:               ${meetingResponse.hostKey}
+    start:                 ${meetingResponse.start}
+    end:                   ${meetingResponse.end}
+    timezone:              ${meetingResponse.timezone}
+    title:                 ${meetingResponse.title}
+    sipAddress:            ${meetingResponse.sipAddress}
+    siteUrl:               ${meetingResponse.siteUrl}
+    webLink:               ${meetingResponse.webLink}
+    meetingNumber:         ${meetingResponse.meetingNumber}
+    password:              ${meetingResponse.password}
+    enabledJoinBeforeHost: ${meetingResponse.enabledJoinBeforeHost}
+    joinBeforeHostMinutes: ${meetingResponse.joinBeforeHostMinutes}`;
 
   onMount(async () => {
     if (!$tokenResponseStore) {
@@ -84,6 +84,7 @@
                     <form
                       on:submit|preventDefault={async (e) => {
                         submitIsLoading = true;
+                        displayError = false;
                         const start = e.target['start'].value;
                         const end = e.target['end'].value;
                         const title = e.target['title'].value;
@@ -120,9 +121,7 @@
               <div class="column">
                 <div class="box notification is-primary">
                   <h1 class="subtitle is-size-4">Webex Meeting API Response</h1>
-                  <pre
-                    style="background-color: {theme.plain.backgroundColor}; white-space: pre-line"
-                    class=" px-0 py-3">
+                  <pre style="background-color: {theme.plain.backgroundColor}" class="py-3">
                     <Highlight {theme} {Prism} text={response} language="javascript" />
                   </pre>
                 </div>
@@ -237,7 +236,7 @@
       </div>
       <div class="columns">
         <div class="column p-0 is-flex is-3">Errors:</div>
-        {#each error.errors as { description }}
+        {#each [{ description: 'blu lublub' }] as { description }}
           <div class="column p-0 is-9">{description}</div>
         {/each}
       </div>
@@ -252,7 +251,7 @@
   }
   pre {
     border-radius: 0.5rem;
-    white-space: initial !important;
+    white-space: inherit !important;
   }
   .code {
     display: flex;
@@ -274,9 +273,13 @@
   #notification {
     width: 40rem;
     display: block;
-    position: absolute;
+    position: fixed;
     z-index: 1;
     right: 0;
     bottom: 0;
+  }
+  .monospace {
+    white-space: wrap !important;
+    font-family: monospace;
   }
 </style>
