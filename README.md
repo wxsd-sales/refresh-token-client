@@ -83,6 +83,8 @@ This PoC follows a simple Webex Oauth2.0 flow for authenticating the user initia
 - [Node v18.0.0](https://nodejs.org/en/blog/announcements/v18-release-announce)
 - [Node Version Manager](https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/)
 - [Svelte Basic Understandings](https://svelte.dev/)
+- [Webex Integration](https://developer.webex.com/docs/integrations) with the following scopes:
+`meeting:schedules_write`
 
 
 <!-- GETTING STARTED -->
