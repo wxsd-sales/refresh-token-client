@@ -1587,8 +1587,8 @@ FodyWeavers.xsd
 
 # End of https://www.toptal.com/developers/gitignore/api/node,linux,macos,eclipse,windows,intellij,intellij+all,intellij+iml,visualstudio,visualstudiocode,svelte,react,reactnative,vue,vuejs,android,androidstudio,java,python,django,phpunit,kotlin,netbeans
 
-!.env.example
 .env.*
+!.env.example
 .idea/codeStyles
 /.svelte-kit
 /build
